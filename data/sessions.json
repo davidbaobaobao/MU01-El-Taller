@@ -1,0 +1,58 @@
+[
+  {
+    "id": "the-classic",
+    "name": "The Classic",
+    "tag": "Solo",
+    "image": "assets/images/session-classic.jpg",
+    "imageAlt": "Overhead view of a person working at a pottery wheel with brown clay",
+    "shortDescription": "A focused 2-hour solo session to learn the basics of the wheel. Perfect for complete beginners.",
+    "duration": "120 min",
+    "groupSize": "1 person",
+    "price": "€45",
+    "priceNote": "per person",
+    "featured": false,
+    "bookUrl": "pages/book.html?session=the-classic"
+  },
+  {
+    "id": "group-session",
+    "name": "Group Session",
+    "tag": "Group",
+    "image": "assets/images/session-group.jpg",
+    "imageAlt": "Group of friends laughing and making pottery together at a large workbench",
+    "shortDescription": "Bring your friends. We provide the wine, the clay, and the music. Ideal for birthdays and hen parties.",
+    "duration": "150 min",
+    "groupSize": "4–12 people",
+    "price": "€35",
+    "priceNote": "per person",
+    "featured": true,
+    "bookUrl": "pages/book.html?session=group-session"
+  },
+  {
+    "id": "date-night",
+    "name": "Date Night",
+    "tag": "Couples",
+    "image": "assets/images/session-date.jpg",
+    "imageAlt": "Two sets of hands working on the same piece of clay on a wheel in warm lighting",
+    "shortDescription": "Shared wheel time for two. A quiet evening of co-creation in the studio. Wine included.",
+    "duration": "150 min",
+    "groupSize": "2 people",
+    "price": "€85",
+    "priceNote": "per pair",
+    "featured": false,
+    "bookUrl": "pages/book.html?session=date-night"
+  },
+  {
+    "id": "corporate",
+    "name": "Corporate Workshop",
+    "tag": "Corporate",
+    "image": "assets/images/session-corporate.jpg",
+    "imageAlt": "Colleagues collaborating on clay pieces in a bright studio setting",
+    "shortDescription": "Team-building with a difference. Full studio hire for up to 20 people, materials and instructor included.",
+    "duration": "3 hours",
+    "groupSize": "10–20 people",
+    "price": "POA",
+    "priceNote": "contact us",
+    "featured": false,
+    "bookUrl": "pages/contact.html?subject=corporate"
+  }
+]

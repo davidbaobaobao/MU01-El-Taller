@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>El Taller | Pottery Studio Barcelona</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Be+Vietnam+Pro:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: #fff8f2;
+            color: #1e1b15;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Noto Serif', serif;
+        }
+        .grain-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        .organic-radius {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f8f0e6",
+                        "on-surface": "#1e1b15",
+                        "secondary-fixed": "#ffdbcf",
+                        "surface-tint": "#934a27",
+                        "primary-fixed-dim": "#ffb595",
+                        "primary-container": "#ae603a",
+                        "secondary-container": "#ffccbb",
+                        "on-tertiary-fixed-variant": "#51452f",
+                        "outline": "#87736b",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#e0d9cf",
+                        "secondary": "#7b5548",
+                        "on-background": "#1e1b15",
+                        "background": "#fff8f2",
+                        "on-surface-variant": "#54433c",
+                        "on-secondary-fixed": "#2f140a",
+                        "on-primary-fixed-variant": "#753311",
+                        "on-tertiary-container": "#fffbff",
+                        "surface-container-high": "#efe7dd",
+                        "surface-container-highest": "#e9e1d8",
+                        "primary-fixed": "#ffdbcd",
+                        "surface-variant": "#e9e1d8",
+                        "error-container": "#ffdad6",
+                        "surface": "#fff8f2",
+                        "on-secondary-container": "#7a5447",
+                        "tertiary-fixed": "#f3e0c2",
+                        "on-primary-fixed": "#351000",
+                        "primary": "#904824",
+                        "tertiary-fixed-dim": "#d6c4a7",
+                        "secondary-fixed-dim": "#edbbab",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#817359",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#fbf2e8",
+                        "outline-variant": "#dac1b8",
+                        "surface-container": "#f5ede3",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#fff8f2",
+                        "inverse-surface": "#343029",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#fffbff",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#613e32",
+                        "on-tertiary-fixed": "#241a07",
+                        "inverse-primary": "#ffb595",
+                        "tertiary": "#685a42"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Be Vietnam Pro"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface selection:bg-primary-fixed selection:text-on-primary-fixed overflow-x-hidden">
+<div class="grain-overlay fixed inset-0 z-[100]"></div>
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fff8f2] dark:bg-[#1e1b15] flex justify-between items-center px-6 py-4 max-w-full mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#904824] dark:text-[#C4714A]">grid_view</span>
+<span class="text-2xl font-serif text-[#904824] dark:text-[#C4714A] tracking-tighter">El Taller</span>
+</div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="text-[#904824] border-b-2 border-[#904824] pb-1 font-medium transition-opacity duration-300 hover:opacity-80" href="#">Home</a>
+<a class="text-[#7b5548] dark:text-[#a89088] transition-opacity duration-300 hover:opacity-80" href="#">Workshops</a>
+<a class="text-[#7b5548] dark:text-[#a89088] transition-opacity duration-300 hover:opacity-80" href="#">Materials</a>
+<a class="text-[#7b5548] dark:text-[#a89088] transition-opacity duration-300 hover:opacity-80" href="#">Studio</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-xl font-medium tracking-wide hover:opacity-90 transition-all active:scale-95 cubic-bezier(0.4, 0, 0.2, 1)">
+            Book Session
+        </button>
+</nav>
+<main class="pt-24 pb-32">
+<!-- Hero Section -->
+<section class="px-6 py-12 md:py-24 max-w-7xl mx-auto overflow-hidden">
+<div class="grid md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-6 space-y-8 z-10">
+<h1 class="text-5xl md:text-7xl font-serif leading-tight text-on-surface tracking-tighter">
+                        Make something <br/>with your <span class="italic text-primary">hands.</span>
+</h1>
+<p class="text-lg text-secondary max-w-md leading-relaxed">
+                        Spend your afternoons in our sun-drenched Gràcia studio. No experience needed, just a willingness to get a little messy.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-medium text-lg hover:opacity-90 transition-all flex items-center gap-2">
+                            Book a session
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="border border-outline-variant/30 text-primary px-8 py-4 rounded-xl font-medium text-lg hover:bg-surface-container-low transition-all">
+                            Gift a class
+                        </button>
+</div>
+</div>
+<div class="md:col-span-6 relative h-[500px]">
+<!-- Asymmetric Image Collage -->
+<div class="absolute top-0 right-0 w-3/4 h-3/4 rounded-xl overflow-hidden rotate-2 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="close up of hands molding a ceramic bowl on a pottery wheel with wet clay splashes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyPwN5nVoTQYGwqq9EsEjBb9fLTCneT3LWom0hkWk1lmRhYDADTFXVhUwW_QXFy0sZpkCLIc8CqDQWYs4JXoNRyI-Y8doPPfsQsuQRXvXi7N-oZ_C2Gwf5smOCaKZ-aCYs9qEAbyYej0KBnCm4mtHDgkZwqN6SlK9Hgo147W_nMwnTRz02XoISv65lhpuqFdfQbFAz9hosUypbZ7svxso_yjNh6yV_ka4AkqluuUPk0xbZ7KE9tTODfb-eE-zxDFB2WKI89TUPWR2g"/>
+</div>
+<div class="absolute bottom-4 left-0 w-2/3 h-1/2 rounded-xl overflow-hidden -rotate-3 shadow-md z-20 border-8 border-surface">
+<img class="w-full h-full object-cover" data-alt="row of finished handcrafted ceramic mugs and plates on a rustic wooden shelf in a sunlit studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhVclUNOLE1YsHgn5msOla9NEdLnn-KCHf8dWd5chtEAFy0hKN9xbAmwyBPehMvQ_fuYpR9H2Tc4GyLNV08IImU2E9_KDM3VZgD-XlFccGzwbJffYyHrygCzuYLsm0mEBAglcwBWwL_NIKlPHjcqd0qoOsR2YcNer0fDTKuHTs-6VtEUDP2uRge_pBGQRR-0NNxt1HLMmQqjEu0t7nq1nKJffRcuQ_6Ca6l1WWMI4VtcD0JkAUkuwPoqbuifrjPoSRYQLx6qYVIh_n"/>
+</div>
+<div class="absolute top-1/2 left-1/4 w-32 h-32 organic-radius bg-primary-fixed/20 -z-10 blur-xl"></div>
+</div>
+</div>
+</section>
+<!-- Sessions Section -->
+<section class="bg-surface-container-low py-24">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex justify-between items-end mb-16">
+<div class="space-y-2">
+<span class="uppercase tracking-[0.2em] text-xs font-bold text-secondary-container bg-on-secondary-container/10 px-3 py-1 rounded-full">Workshops</span>
+<h2 class="text-4xl font-serif text-on-surface">Upcoming Sessions</h2>
+</div>
+<p class="hidden md:block text-secondary max-w-xs text-right italic font-serif">"Every piece tells a story of the hands that held it."</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- The Classic -->
+<div class="bg-surface rounded-xl overflow-hidden group transition-all duration-300 hover:-translate-y-2">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover grayscale-[0.2] group-hover:scale-105 transition-transform duration-700" data-alt="overhead view of a single person working at a pottery wheel with brown clay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4j5-J_YPB3rCIRFIzqs1NKIBRCSIwV3eSsxZY0MRuRIhB1tKAWAb0XgHRhVgl1XC71Ctyp_gqtWhtA6TB6qxokcKFZA_0Qyl9rHFq16LwfTgfqToEHnE7Ug2KcFdW-5xHPwNqi9XYVAh_DgmVP24Abq9B0y-38kq3hR-kEvVFapGen5fBScKllAWz3Ug_blJAk8V9UL4zgHvM9z-6KMUXFIegzSQ2vpg3S1PnH0J5qI0rDjaW_tH9S98wbPGyImIE73id5y4VMNH-"/>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-start">
+<h3 class="text-2xl font-serif">The Classic</h3>
+<span class="text-primary font-bold">€45</span>
+</div>
+<p class="text-secondary body-md">A focused 2-hour solo session to learn the basics of the wheel.</p>
+<div class="pt-4 flex items-center gap-4 text-xs font-bold tracking-widest uppercase text-secondary/60">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 120 MIN</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">person</span> SOLO</span>
+</div>
+</div>
+</div>
+<!-- Group Session (Featured) -->
+<div class="bg-primary text-on-primary rounded-xl overflow-hidden md:scale-105 shadow-2xl z-20 group relative">
+<div class="absolute top-4 right-4 bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Most Popular</div>
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90" data-alt="group of friends laughing and making pottery together at a large wooden workbench in a bright studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApVV3DX3PKyTlYlGuVkEqxEOM_RUB_f0cRxEIM0r_rT0_RziqCcc64FH_eoLFrAeOZ5YVNH9eNRnagFn8PXDOUjxzCQwCW-6dRz9XgvgznOK7MXbdIOmOwY-niah5Q8jvX8638SeYbc7NxX67Ci2oG3HjFMMSccaAnrcrfkQnETHqHkVMtfgk0wHTx6xFblfTmEHwemd6bOpIrU92n9a0_Yf03QYdhDqP_vh5gha7KD0hz7DNDPHMTTsuRc9eCS7xGkPg7duZMmi8G"/>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-start">
+<h3 class="text-2xl font-serif">Group Session</h3>
+<span class="font-bold">€35/pp</span>
+</div>
+<p class="text-on-primary/80 body-md">Bring your friends. We provide the wine, the clay, and the music.</p>
+<button class="w-full bg-surface text-primary py-3 rounded-lg font-bold tracking-tight hover:bg-surface-container-highest transition-colors">Join Group</button>
+</div>
+</div>
+<!-- Date Night -->
+<div class="bg-surface rounded-xl overflow-hidden group transition-all duration-300 hover:-translate-y-2">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover grayscale-[0.2] group-hover:scale-105 transition-transform duration-700" data-alt="two sets of hands working on the same piece of clay on a wheel in warm dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiE-azG57PZywmBRuUfs2UZjfunaN5Y70-lwxFyFOAshmrg62Wvz4MhB0Vq82zxru9mLE6uzvpK-QLxh9q27dpkgrGYJZ5RHCzJCM8jB2OaPtM2Mn1z9qRRm2VVHzzbmntVTY7DhEuZwsbdC5pi5U6ZKSQ54gNpCJHnrw1PdEfNq77ZnTc_zbiMn0jm3KE79rWK4r7T7rC9yd0rwTi55UYqLrHgWiayseF4XQ0K3oDJGsb9fxU3ffu4BoyztoOzNeu7TzWmVjqP1LN"/>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-start">
+<h3 class="text-2xl font-serif">Date Night</h3>
+<span class="text-primary font-bold">€85</span>
+</div>
+<p class="text-secondary body-md">Shared wheel time for two. A quiet evening of co-creation.</p>
+<div class="pt-4 flex items-center gap-4 text-xs font-bold tracking-widest uppercase text-secondary/60">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 150 MIN</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">favorite</span> COUPLES</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section class="py-32 px-6 overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16 text-center">
+<span class="uppercase tracking-[0.2em] text-xs font-bold text-secondary bg-surface-container-highest px-3 py-1 rounded-full">Atmosphere</span>
+<h2 class="text-4xl font-serif text-on-surface mt-4">Studio Moments</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center">
+<div class="space-y-6">
+<div class="organic-radius bg-surface-container-highest aspect-square overflow-hidden -rotate-3 hover:rotate-0 transition-transform duration-500 shadow-md">
+<img class="w-full h-full object-cover" data-alt="Close up of raw clay textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnrG4O0YyPj7C8yO7Z8E9k_U_yO6R5T4r5t6y7u8i9o0p1a2s3d4f5g6h7j8k9l0"/>
+</div>
+<div class="rounded-2xl bg-surface-container-highest aspect-[3/4] overflow-hidden rotate-2 hover:rotate-0 transition-transform duration-500 shadow-md">
+<img class="w-full h-full object-cover" data-alt="Finished ceramic bowls on a shelf" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmC1D2E3F4G5H6I7J8K9L0M1N2O3P4Q5R6S7T8U9V0W1X2Y3Z"/>
+</div>
+</div>
+<div class="space-y-6 pt-12">
+<div class="organic-radius bg-surface-container-highest aspect-[4/5] overflow-hidden rotate-1 hover:rotate-0 transition-transform duration-500 shadow-lg border-4 border-surface">
+<img class="w-full h-full object-cover" data-alt="Hand molding a vase" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnD5E6F7G8H9I0J1K2L3M4N5O6P7Q8R9S0T1U2V3W4X5Y"/>
+</div>
+<div class="organic-radius bg-surface-container-highest aspect-square overflow-hidden -rotate-2 hover:rotate-0 transition-transform duration-500 shadow-md">
+<img class="w-full h-full object-cover" data-alt="Sunlight hitting a potter's wheel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoE7F8G9H0I1J2K3L4M5N6O7P8Q9R0S1T2U3V4W5X6Y7Z"/>
+</div>
+</div>
+<div class="space-y-6">
+<div class="rounded-2xl bg-surface-container-highest aspect-square overflow-hidden rotate-3 hover:rotate-0 transition-transform duration-500 shadow-md">
+<img class="w-full h-full object-cover" data-alt="Rows of drying pottery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuEpF9G0H1I2J3K4L5M6N7O8P9Q0R1S2T3U4V5W6X7Y8Z9A"/>
+</div>
+<div class="organic-radius bg-surface-container-highest aspect-[3/4] overflow-hidden -rotate-1 hover:rotate-0 transition-transform duration-500 shadow-lg border-4 border-surface">
+<img class="w-full h-full object-cover" data-alt="Splattered apron detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuFqG1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6W7X8Y9Z0B"/>
+</div>
+</div>
+<div class="space-y-6 pt-12">
+<div class="organic-radius bg-surface-container-highest aspect-[4/5] overflow-hidden rotate-2 hover:rotate-0 transition-transform duration-500 shadow-md">
+<img class="w-full h-full object-cover" data-alt="Detail of pottery tools" src="https://lh3.googleusercontent.com/aida-public/AB6AXuGrH3I4J5K6L7M8N9O0P1Q2R3S4T5U6V7W8X9Y0Z1C2D"/>
+</div>
+<div class="rounded-full bg-surface-container-highest aspect-square overflow-hidden -rotate-3 hover:rotate-0 transition-transform duration-500 shadow-md">
+<img class="w-full h-full object-cover" data-alt="Close up of clay slip" src="https://lh3.googleusercontent.com/aida-public/AB6AXuHsI5J6K7L8M9N0O1P2Q3R4S5T6U7V8W9X0Y1Z2A3B4C"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How it Works -->
+<section class="py-32 px-6">
+<div class="max-w-5xl mx-auto text-center mb-20">
+<h2 class="text-4xl font-serif mb-6">The Journey of a Piece</h2>
+<div class="h-1 w-24 bg-primary/20 mx-auto rounded-full"></div>
+</div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 relative">
+<!-- Connective Line -->
+<div class="hidden md:block absolute top-10 left-0 w-full h-[2px] bg-outline-variant/10 -z-10"></div>
+<div class="text-center space-y-6 group">
+<div class="w-20 h-20 bg-surface-container-highest rounded-full flex items-center justify-center mx-auto ring-8 ring-surface group-hover:bg-primary group-hover:text-on-primary transition-all duration-500">
+<span class="material-symbols-outlined text-3xl">calendar_month</span>
+</div>
+<div class="space-y-2">
+<h4 class="font-serif text-xl">Book</h4>
+<p class="text-sm text-secondary leading-relaxed px-4">Choose your slot and session type online.</p>
+</div>
+</div>
+<div class="text-center space-y-6 group">
+<div class="w-20 h-20 bg-surface-container-highest rounded-full flex items-center justify-center mx-auto ring-8 ring-surface group-hover:bg-primary group-hover:text-on-primary transition-all duration-500">
+<span class="material-symbols-outlined text-3xl">door_open</span>
+</div>
+<div class="space-y-2">
+<h4 class="font-serif text-xl">Show up</h4>
+<p class="text-sm text-secondary leading-relaxed px-4">Find us in Gràcia. Apron and materials waiting.</p>
+</div>
+</div>
+<div class="text-center space-y-6 group">
+<div class="w-20 h-20 bg-surface-container-highest rounded-full flex items-center justify-center mx-auto ring-8 ring-surface group-hover:bg-primary group-hover:text-on-primary transition-all duration-500">
+<span class="material-symbols-outlined text-3xl">precision_manufacturing</span>
+</div>
+<div class="space-y-2">
+<h4 class="font-serif text-xl">Make stuff</h4>
+<p class="text-sm text-secondary leading-relaxed px-4">Mold, shape, and refine your creation.</p>
+</div>
+</div>
+<div class="text-center space-y-6 group">
+<div class="w-20 h-20 bg-surface-container-highest rounded-full flex items-center justify-center mx-auto ring-8 ring-surface group-hover:bg-primary group-hover:text-on-primary transition-all duration-500">
+<span class="material-symbols-outlined text-3xl">shopping_basket</span>
+</div>
+<div class="space-y-2">
+<h4 class="font-serif text-xl">Pick it up</h4>
+<p class="text-sm text-secondary leading-relaxed px-4">After firing, your piece is ready to go home.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews Strip -->
+<section class="border-y border-outline-variant/10 py-16 overflow-hidden bg-surface-container-lowest">
+<div class="flex whitespace-nowrap animate-marquee items-center gap-12 md:gap-24 opacity-70">
+<div class="flex items-center gap-4 shrink-0">
+<p class="font-serif text-xl italic text-on-surface">"The perfect escape from digital noise."</p>
+<span class="text-xs uppercase tracking-widest font-bold text-secondary">— Marc R.</span>
+</div>
+<div class="w-2 h-2 rounded-full bg-primary/20"></div>
+<div class="flex items-center gap-4 shrink-0">
+<p class="font-serif text-xl italic text-on-surface">"Gràcia's hidden creative gem."</p>
+<span class="text-xs uppercase tracking-widest font-bold text-secondary">— Elena S.</span>
+</div>
+<div class="w-2 h-2 rounded-full bg-primary/20"></div>
+<div class="flex items-center gap-4 shrink-0">
+<p class="font-serif text-xl italic text-on-surface">"Hands were dirty, soul was clean."</p>
+<span class="text-xs uppercase tracking-widest font-bold text-secondary">— Jordi V.</span>
+</div>
+<div class="w-2 h-2 rounded-full bg-primary/20"></div>
+<div class="flex items-center gap-4 shrink-0">
+<p class="font-serif text-xl italic text-on-surface">"Best date night in Barcelona."</p>
+<span class="text-xs uppercase tracking-widest font-bold text-secondary">— Sofia L.</span>
+</div>
+</div>
+</section>
+<!-- Final CTA (Sticky Footer) -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-40 w-[90%] max-w-lg bg-on-surface text-surface py-4 px-8 rounded-full shadow-2xl flex items-center justify-between backdrop-blur-md bg-opacity-95 md:hidden">
+<span class="font-serif text-sm">Ready to get your hands dirty?</span>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider">Book Now</button>
+</div>
+<section class="max-w-7xl mx-auto px-6 mt-32">
+<div class="bg-[#2d2821] text-[#fff8f2] rounded-3xl p-12 md:p-24 text-center space-y-8 relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 mix-blend-overlay">
+<img class="w-full h-full object-cover" data-alt="dark atmospheric background showing a ceramicist's tools and dry clay on a dark stone surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKALbkK4sQ-ZnN-DkngyOzAQtyI36okroYE_pK4XMxVaDXHTxGWDHw8XMVoVkMpmFFbHC87sMU8r0B52c7Qs5wj25dKOQ0TWsk427uWekt19407uoOF22DqU8Hh7RgWmmGMkgiC9ZIenz4jHJ1_8u15gOj2-zIm_cFqS-DP4rVn8Lc9XkKOAESs2N2GRA5CWn58s3ug0C4j7C2bcBFfj-NkCUNhoJQnDjuIP4fpvnduiLVsfeLI-wULqw8oKyH47lsAxWpoVW1bx3Q"/>
+</div>
+<h2 class="text-4xl md:text-6xl font-serif leading-tight relative z-10">Ready to get your <br/>hands dirty?</h2>
+<div class="flex justify-center gap-4 relative z-10">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-full text-lg font-bold hover:scale-105 transition-transform active:scale-95">Book Your Session</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#7b5548]/15 bg-[#fff8f2] dark:bg-[#1e1b15] flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full gap-8">
+<div class="space-y-4 text-center md:text-left">
+<span class="text-lg font-serif text-[#904824]">El Taller</span>
+<p class="text-[#7b5548] opacity-70 text-sm max-w-xs">
+                Carrer de la Perla, 12, Gràcia<br/>
+                Barcelona, 08012
+            </p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 md:gap-12">
+<a class="text-[#7b5548] opacity-70 hover:text-[#904824] transition-colors duration-200 uppercase text-xs tracking-widest font-bold" href="#">The Studio</a>
+<a class="text-[#7b5548] opacity-70 hover:text-[#904824] transition-colors duration-200 uppercase text-xs tracking-widest font-bold" href="#">Workshops</a>
+<a class="text-[#7b5548] opacity-70 hover:text-[#904824] transition-colors duration-200 uppercase text-xs tracking-widest font-bold" href="#">Materials</a>
+<a class="text-[#7b5548] opacity-70 hover:text-[#904824] transition-colors duration-200 uppercase text-xs tracking-widest font-bold" href="#">Contact</a>
+</div>
+<div class="text-center md:text-right space-y-4">
+<p class="text-[#7b5548] opacity-70 text-[10px] uppercase tracking-[0.2em] font-bold">© 2024 El Taller Barcelona. Handcrafted in Gràcia.</p>
+<div class="flex justify-center md:justify-end gap-4">
+<span class="material-symbols-outlined text-primary/50 text-xl">favorite</span>
+<span class="material-symbols-outlined text-primary/50 text-xl">psychology</span>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center gap-12 items-center px-4 pb-6 pt-4 bg-[#fff8f2]/80 backdrop-blur-xl md:hidden border-t border-[#7b5548]/10 shadow-[0_-4px_24px_rgba(30,27,21,0.06)] rounded-t-3xl">
+<div class="flex flex-col items-center justify-center bg-[#904824] text-[#fff8f2] rounded-full px-8 py-2 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="text-[10px] font-bold tracking-widest uppercase">Book Now</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#7b5548] px-4 py-2 hover:bg-[#7b5548]/5 transition-all">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="text-[10px] font-bold tracking-widest uppercase">Enquire</span>
+</div>
+</nav>
+</body></html>

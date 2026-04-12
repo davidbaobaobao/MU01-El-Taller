@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Us — El Taller Barcelona</title>
+  <meta name="description" content="El Taller is on Carrer de la Perla, 12, in Gràcia, Barcelona. Come and visit — or drop us a message.">
+  <link rel="stylesheet" href="../assets/css/global.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo">El Taller</a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="./workshops.html">Workshops</a>
+      <a href="./studio.html">The Studio</a>
+      <a href="./gift.html">Gift a class</a>
+      <a href="./contact.html" class="active">Find us</a>
+    </div>
+    <a href="./book.html" class="nav-cta">Book session</a>
+  </nav>
+
+  <main>
+
+    <!-- ── HEADER ────────────────────────────────────────── -->
+    <section style="padding:4rem 1.5rem 3rem;background:var(--surface-container-low);">
+      <div class="container">
+        <p class="section-label">Come and visit</p>
+        <h1 class="section-heading" style="font-size:clamp(2.5rem,5vw,3.5rem);">Find us</h1>
+        <p style="color:var(--secondary);margin-top:1rem;max-width:32rem;line-height:1.7;">
+          We're on Carrer de la Perla in the heart of Gràcia. Five minutes' walk from
+          Fontana metro station.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── MAP + INFO ─────────────────────────────────────── -->
+    <section class="py-24">
+      <div class="container">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;flex-wrap:wrap;">
+
+          <!-- Map -->
+          <div class="map-container">
+            <!-- Placeholder map — replace src with real Google Maps embed URL before launch -->
+            <iframe
+              title="El Taller location map"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=2.153%2C41.399%2C2.163%2C41.406&layer=mapnik&marker=41.4024%2C2.1573"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <!-- Info -->
+          <div>
+            <div style="margin-bottom:2.5rem;">
+              <p style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+                        color:var(--secondary);margin-bottom:.75rem;">Address</p>
+              <p style="font-family:var(--font-serif);font-size:1.2rem;line-height:1.7;color:var(--on-surface);">
+                Carrer de la Perla, 12<br>
+                08012 Barcelona<br>
+                Gràcia
+              </p>
+            </div>
+            <div style="margin-bottom:2.5rem;">
+              <p style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+                        color:var(--secondary);margin-bottom:.75rem;">Getting here</p>
+              <ul style="color:var(--secondary);line-height:2;font-size:.95rem;list-style:none;padding:0;">
+                <li>Metro: Fontana (L3) — 5 min walk</li>
+                <li>Bus: V17, 22, 24 — stop Gràcia</li>
+                <li>Bike: Bicing station at Plaça de la Vila de Gràcia</li>
+              </ul>
+            </div>
+            <div style="margin-bottom:2.5rem;">
+              <p style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+                        color:var(--secondary);margin-bottom:.75rem;">Studio hours</p>
+              <ul style="color:var(--secondary);line-height:2;font-size:.95rem;list-style:none;padding:0;">
+                <li>Monday – Friday: 10:00 – 21:00</li>
+                <li>Saturday: 10:00 – 20:00</li>
+                <li>Sunday: Closed</li>
+              </ul>
+            </div>
+            <div>
+              <p style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+                        color:var(--secondary);margin-bottom:.75rem;">Contact</p>
+              <p style="color:var(--secondary);font-size:.95rem;line-height:2;">
+                <a href="mailto:hola@eltaller.barcelona" style="color:var(--primary);font-weight:500;">
+                  hola@eltaller.barcelona
+                </a><br>
+                <a href="tel:+34931234567" style="color:var(--primary);font-weight:500;">
+                  +34 93 123 45 67
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT FORM ───────────────────────────────────── -->
+    <section class="py-24 bg-low">
+      <div class="container" style="max-width:44rem;">
+        <p class="section-label">Get in touch</p>
+        <h2 class="section-heading" style="margin-bottom:2.5rem;">Send us a message</h2>
+        <!--
+          Wire this form to your backend / Formspree / Netlify Forms.
+          Add action="https://formspree.io/f/YOUR_ID" method="POST"
+          or handle via JS fetch.
+        -->
+        <form id="contact-form" style="display:flex;flex-direction:column;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+            <div class="form-group">
+              <label class="form-label" for="c-name">Your name</label>
+              <input class="form-input" id="c-name" name="name" type="text"
+                     placeholder="Clara Martín" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="c-email">Email</label>
+              <input class="form-input" id="c-email" name="email" type="email"
+                     placeholder="hola@you.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="c-subject">Subject</label>
+            <select class="form-select" id="c-subject" name="subject">
+              <option value="general">General question</option>
+              <option value="corporate">Corporate workshop</option>
+              <option value="gift-classic">Gift voucher — The Classic</option>
+              <option value="gift-group">Gift voucher — Group Session</option>
+              <option value="gift-date">Gift voucher — Date Night</option>
+              <option value="gift-custom">Gift voucher — Custom amount</option>
+              <option value="press">Press</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="c-message">Message</label>
+            <textarea class="form-textarea" id="c-message" name="message"
+                      placeholder="Tell us what you need..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="align-self:flex-start;margin-top:.5rem;">
+            Send message →
+          </button>
+          <p id="form-status" style="margin-top:1rem;font-size:.9rem;color:var(--secondary);display:none;"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div>
+      <div class="footer-logo">El Taller</div>
+      <p class="footer-address">
+        Carrer de la Perla, 12, Gràcia<br>
+        Barcelona 08012<br>
+        <a href="mailto:hola@eltaller.barcelona" style="color:var(--primary);">hola@eltaller.barcelona</a>
+      </p>
+    </div>
+    <nav class="footer-links">
+      <a href="../index.html">Home</a>
+      <a href="./workshops.html">Workshops</a>
+      <a href="./studio.html">The Studio</a>
+      <a href="./gift.html">Gift a class</a>
+      <a href="./contact.html">Find us</a>
+    </nav>
+    <div>
+      <p class="footer-copy">© 2025 El Taller Barcelona. Handcrafted in Gràcia.</p>
+    </div>
+  </footer>
+
+  <nav class="mobile-nav">
+    <a href="./book.html"
+       style="display:flex;flex-direction:column;align-items:center;
+              background:var(--primary);color:var(--on-primary);
+              border-radius:9999px;padding:.5rem 1.5rem;">
+      <span style="font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;">Book Now</span>
+    </a>
+    <a href="./contact.html"
+       style="display:flex;flex-direction:column;align-items:center;
+              color:var(--secondary);padding:.5rem 1rem;">
+      <span style="font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;">Find us</span>
+    </a>
+  </nav>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Pre-fill subject from URL param
+      const params = new URLSearchParams(window.location.search);
+      const subject = params.get('subject');
+      if (subject) {
+        const sel = document.getElementById('c-subject');
+        if (sel) [...sel.options].forEach(o => { if (o.value === subject) o.selected = true; });
+      }
+
+      // Basic form feedback (replace with real backend handling)
+      document.getElementById('contact-form').addEventListener('submit', e => {
+        e.preventDefault();
+        const status = document.getElementById('form-status');
+        status.style.display = 'block';
+        status.textContent = 'Thanks — we\'ll be in touch within one business day.';
+      });
+    });
+  </script>
+</body>
+</html>

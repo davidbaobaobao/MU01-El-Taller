@@ -1,0 +1,73 @@
+<!--
+  _partials.html
+  ──────────────
+  This file is NOT a standalone page.
+  Copy the nav and footer blocks below into each HTML page.
+  For pages inside /pages/, prefix hrefs with "../"
+  For index.html (root), use "./" or no prefix.
+  ──────────────────────────────────────────────────────────── -->
+
+<!-- ═══ NAV (root version — for index.html) ═══ -->
+<nav class="nav">
+  <a href="./index.html" class="nav-logo">
+    El Taller
+  </a>
+  <div class="nav-links">
+    <a href="./index.html">Home</a>
+    <a href="./pages/workshops.html">Workshops</a>
+    <a href="./pages/studio.html">The Studio</a>
+    <a href="./pages/gift.html">Gift a class</a>
+    <a href="./pages/contact.html">Find us</a>
+  </div>
+  <a href="./pages/book.html" class="nav-cta">Book session</a>
+</nav>
+
+<!-- ═══ NAV (pages/ version — for pages/*.html) ═══ -->
+<nav class="nav">
+  <a href="../index.html" class="nav-logo">
+    El Taller
+  </a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="./workshops.html">Workshops</a>
+    <a href="./studio.html">The Studio</a>
+    <a href="./gift.html">Gift a class</a>
+    <a href="./contact.html">Find us</a>
+  </div>
+  <a href="./book.html" class="nav-cta">Book session</a>
+</nav>
+
+<!-- ═══ FOOTER (root version) ═══ -->
+<footer class="footer">
+  <div>
+    <div class="footer-logo">El Taller</div>
+    <p class="footer-address">
+      Carrer de la Perla, 12, Gràcia<br>
+      Barcelona 08012<br>
+      <a href="mailto:hola@eltaller.barcelona" style="color:var(--primary);">hola@eltaller.barcelona</a>
+    </p>
+  </div>
+  <nav class="footer-links">
+    <a href="./pages/workshops.html">Workshops</a>
+    <a href="./pages/studio.html">The Studio</a>
+    <a href="./pages/gift.html">Gift a class</a>
+    <a href="./pages/contact.html">Find us</a>
+    <a href="./pages/book.html">Book now</a>
+  </nav>
+  <div>
+    <p class="footer-copy">© 2025 El Taller Barcelona. Handcrafted in Gràcia.</p>
+  </div>
+</footer>
+
+<!-- ═══ MOBILE NAV (same for all pages — adjust hrefs to match depth) ═══ -->
+<nav class="mobile-nav">
+  <a href="./book.html" style="display:flex;flex-direction:column;align-items:center;
+     background:var(--primary);color:var(--on-primary);border-radius:9999px;
+     padding:.5rem 1.5rem;gap:.125rem;">
+    <span style="font-size:.625rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;">Book Now</span>
+  </a>
+  <a href="./contact.html" style="display:flex;flex-direction:column;align-items:center;
+     color:var(--secondary);padding:.5rem 1rem;gap:.125rem;">
+    <span style="font-size:.625rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;">Find us</span>
+  </a>
+</nav>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Taller — Pottery Studio Barcelona</title>
+  <meta name="description" content="Afternoon pottery sessions in the heart of Gràcia, Barcelona. Workshops for groups, couples, and solo makers. No experience needed.">
+  <link rel="stylesheet" href="./assets/css/global.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="./index.html" class="nav-logo">El Taller</a>
+    <div class="nav-links">
+      <a href="./index.html" class="active">Home</a>
+      <a href="./pages/workshops.html">Workshops</a>
+      <a href="./pages/studio.html">The Studio</a>
+      <a href="./pages/gift.html">Gift a class</a>
+      <a href="./pages/contact.html">Find us</a>
+    </div>
+    <a href="./pages/book.html" class="nav-cta">Book session</a>
+  </nav>
+
+  <main>
+
+    <!-- ── HERO ───────────────────────────────────────────── -->
+    <section style="padding:3rem 1.5rem 5rem;max-width:80rem;margin:0 auto;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:1fr;gap:3rem;align-items:center;">
+
+        <div style="z-index:1;">
+          <p class="section-label">Gràcia, Barcelona</p>
+          <h1 style="font-family:var(--font-serif);font-size:clamp(3rem,7vw,5rem);
+                     line-height:1.1;letter-spacing:-.03em;color:var(--on-surface);margin-bottom:1.5rem;">
+            Make something<br>with your <em style="color:var(--primary);">hands.</em>
+          </h1>
+          <p style="font-size:1.1rem;color:var(--secondary);max-width:28rem;
+                    line-height:1.7;margin-bottom:2rem;">
+            Spend your afternoons in our sun-drenched studio. No experience needed —
+            just a willingness to get a little messy.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="./pages/book.html" class="btn-primary">Book a session →</a>
+            <a href="./pages/gift.html" class="btn-ghost">Gift a class</a>
+          </div>
+        </div>
+
+        <!-- Asymmetric image collage -->
+        <div style="position:relative;height:480px;">
+          <div style="position:absolute;top:0;right:0;width:72%;height:75%;
+                      border-radius:var(--radius-xl);overflow:hidden;transform:rotate(2deg);">
+            <img src="./assets/images/hero-wheel.jpg"
+                 alt="Hands molding clay on a pottery wheel"
+                 style="width:100%;height:100%;object-fit:cover;"
+                 onerror="this.parentNode.style.background='var(--surface-container)'">
+          </div>
+          <div style="position:absolute;bottom:1rem;left:0;width:60%;height:50%;
+                      border-radius:var(--radius-xl);overflow:hidden;transform:rotate(-3deg);
+                      border:8px solid var(--surface);z-index:2;">
+            <img src="./assets/images/hero-mugs.jpg"
+                 alt="Finished handmade ceramic mugs on a wooden shelf"
+                 style="width:100%;height:100%;object-fit:cover;"
+                 onerror="this.parentNode.style.background='var(--surface-container-high)'">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── SESSIONS (dynamic) ────────────────────────────── -->
+    <section class="bg-low py-24">
+      <div class="container">
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;
+                    flex-wrap:wrap;gap:1rem;margin-bottom:3rem;">
+          <div>
+            <p class="section-label">Workshops</p>
+            <h2 class="section-heading">Pick your afternoon</h2>
+          </div>
+          <p style="font-family:var(--font-serif);font-style:italic;color:var(--secondary);
+                    max-width:18rem;text-align:right;opacity:.7;font-size:.95rem;">
+            "Every piece tells a story of the hands that held it."
+          </p>
+        </div>
+        <!-- Sessions grid rendered here by JS -->
+        <div id="home-sessions"></div>
+        <div style="text-align:center;margin-top:3rem;">
+          <a href="./pages/workshops.html" class="btn-ghost">View all workshops</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── UPCOMING DATES (dynamic) ──────────────────────── -->
+    <section class="py-24">
+      <div class="container">
+        <div style="margin-bottom:2.5rem;">
+          <p class="section-label">Availability</p>
+          <h2 class="section-heading">Upcoming sessions</h2>
+        </div>
+        <!-- Dates rendered here by JS -->
+        <div id="home-dates"></div>
+        <div style="text-align:center;margin-top:2rem;">
+          <a href="./pages/workshops.html" class="btn-ghost">See all dates</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── STUDIO MOMENTS ────────────────────────────────── -->
+    <section class="py-24 bg-low">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:3rem;">
+          <p class="section-label">Atmosphere</p>
+          <h2 class="section-heading">Studio moments</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);
+                    gap:1rem;max-width:60rem;margin:0 auto;">
+          <!-- Static photo placeholders; swap src for real images -->
+          <div style="aspect-ratio:1;border-radius:var(--radius-xl);overflow:hidden;transform:rotate(-2deg);
+                      background:var(--surface-container);">
+            <img src="./assets/images/studio-1.jpg" alt="Clay textures closeup"
+                 style="width:100%;height:100%;object-fit:cover"
+                 onerror="this.style.display='none'">
+          </div>
+          <div style="aspect-ratio:4/5;border-radius:var(--radius-xl);overflow:hidden;transform:rotate(1deg);
+                      background:var(--surface-container-high);">
+            <img src="./assets/images/studio-2.jpg" alt="Finished bowls on a shelf"
+                 style="width:100%;height:100%;object-fit:cover"
+                 onerror="this.style.display='none'">
+          </div>
+          <div style="aspect-ratio:4/3;border-radius:var(--radius-xl);overflow:hidden;transform:rotate(2deg);
+                      background:var(--surface-container);">
+            <img src="./assets/images/studio-3.jpg" alt="Sunlit studio interior"
+                 style="width:100%;height:100%;object-fit:cover"
+                 onerror="this.style.display='none'">
+          </div>
+          <div style="aspect-ratio:1;border-radius:var(--radius-xl);overflow:hidden;transform:rotate(-1deg);
+                      background:var(--surface-container-high);">
+            <img src="./assets/images/studio-4.jpg" alt="Potter's tools laid out"
+                 style="width:100%;height:100%;object-fit:cover"
+                 onerror="this.style.display='none'">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── HOW IT WORKS ──────────────────────────────────── -->
+    <section class="py-24">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:4rem;">
+          <h2 class="section-heading">The journey of a piece</h2>
+          <div style="width:4rem;height:3px;background:rgba(144,72,36,.2);
+                      border-radius:9999px;margin:1rem auto 0;"></div>
+        </div>
+        <div class="grid grid-4" style="position:relative;">
+          <div style="display:none;position:absolute;top:2.5rem;left:0;width:100%;
+                      height:1px;background:rgba(218,193,184,.15);z-index:0;" class="md-show"></div>
+          <div class="step" style="text-align:center;">
+            <div class="step-circle">1</div>
+            <h4 style="font-family:var(--font-serif);font-size:1.25rem;margin-bottom:.5rem;">Book</h4>
+            <p style="font-size:.9rem;color:var(--secondary);line-height:1.6;padding:0 1rem;">
+              Choose your session and slot online. Payment on booking.
+            </p>
+          </div>
+          <div class="step" style="text-align:center;">
+            <div class="step-circle">2</div>
+            <h4 style="font-family:var(--font-serif);font-size:1.25rem;margin-bottom:.5rem;">Show up</h4>
+            <p style="font-size:.9rem;color:var(--secondary);line-height:1.6;padding:0 1rem;">
+              Find us on Carrer de la Perla, Gràcia. Apron and materials waiting.
+            </p>
+          </div>
+          <div class="step" style="text-align:center;">
+            <div class="step-circle">3</div>
+            <h4 style="font-family:var(--font-serif);font-size:1.25rem;margin-bottom:.5rem;">Make stuff</h4>
+            <p style="font-size:.9rem;color:var(--secondary);line-height:1.6;padding:0 1rem;">
+              Mold, shape, and refine your creation with our instructor.
+            </p>
+          </div>
+          <div class="step" style="text-align:center;">
+            <div class="step-circle">4</div>
+            <h4 style="font-family:var(--font-serif);font-size:1.25rem;margin-bottom:.5rem;">Pick it up</h4>
+            <p style="font-size:.9rem;color:var(--secondary);line-height:1.6;padding:0 1rem;">
+              We fire and glaze. Your piece is ready to collect in two weeks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── REVIEW MARQUEE ────────────────────────────────── -->
+    <section style="border-top:1px solid rgba(218,193,184,.2);
+                    border-bottom:1px solid rgba(218,193,184,.2);
+                    padding:3.5rem 0;background:var(--surface-container-lowest);overflow:hidden;">
+      <div class="marquee-wrap">
+        <div class="marquee-track">
+          <!-- Duplicated for infinite loop -->
+          <div style="display:flex;align-items:center;gap:3rem;shrink:0;">
+            <p style="font-family:var(--font-serif);font-size:1.2rem;font-style:italic;">"The perfect escape from digital noise."</p>
+            <span style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--secondary);">— Marc R.</span>
+            <span style="width:.5rem;height:.5rem;border-radius:50%;background:rgba(144,72,36,.2);flex-shrink:0;"></span>
+            <p style="font-family:var(--font-serif);font-size:1.2rem;font-style:italic;">"Gràcia's hidden creative gem."</p>
+            <span style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--secondary);">— Elena S.</span>
+            <span style="width:.5rem;height:.5rem;border-radius:50%;background:rgba(144,72,36,.2);flex-shrink:0;"></span>
+            <p style="font-family:var(--font-serif);font-size:1.2rem;font-style:italic;">"Hands were dirty, soul was clean."</p>
+            <span style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--secondary);">— Jordi V.</span>
+            <span style="width:.5rem;height:.5rem;border-radius:50%;background:rgba(144,72,36,.2);flex-shrink:0;"></span>
+            <p style="font-family:var(--font-serif);font-size:1.2rem;font-style:italic;">"Best date night in Barcelona."</p>
+            <span style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--secondary);">— Sofia L.</span>
+            <span style="width:.5rem;height:.5rem;border-radius:50%;background:rgba(144,72,36,.2);flex-shrink:0;"></span>
+          </div>
+          <!-- Duplicate for seamless loop -->
+          <div style="display:flex;align-items:center;gap:3rem;shrink:0;">
+            <p style="font-family:var(--font-serif);font-size:1.2rem;font-style:italic;">"The perfect escape from digital noise."</p>
+            <span style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--secondary);">— Marc R.</span>
+            <span style="width:.5rem;height:.5rem;border-radius:50%;background:rgba(144,72,36,.2);flex-shrink:0;"></span>
+            <p style="font-family:var(--font-serif);font-size:1.2rem;font-style:italic;">"Gràcia's hidden creative gem."</p>
+            <span style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--secondary);">— Elena S.</span>
+            <span style="width:.5rem;height:.5rem;border-radius:50%;background:rgba(144,72,36,.2);flex-shrink:0;"></span>
+            <p style="font-family:var(--font-serif);font-size:1.2rem;font-style:italic;">"Hands were dirty, soul was clean."</p>
+            <span style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--secondary);">— Jordi V.</span>
+            <span style="width:.5rem;height:.5rem;border-radius:50%;background:rgba(144,72,36,.2);flex-shrink:0;"></span>
+            <p style="font-family:var(--font-serif);font-size:1.2rem;font-style:italic;">"Best date night in Barcelona."</p>
+            <span style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--secondary);">— Sofia L.</span>
+            <span style="width:.5rem;height:.5rem;border-radius:50%;background:rgba(144,72,36,.2);flex-shrink:0;"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DARK CTA ───────────────────────────────────────── -->
+    <section style="padding:4rem 1.5rem;">
+      <div class="container">
+        <div class="cta-dark">
+          <h2>Ready to get your<br>hands dirty?</h2>
+          <a href="./pages/book.html" class="btn-primary"
+             style="background:var(--primary);color:var(--on-primary);font-size:1.1rem;padding:1.1rem 2.5rem;">
+            Book your session →
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div>
+      <div class="footer-logo">El Taller</div>
+      <p class="footer-address">
+        Carrer de la Perla, 12, Gràcia<br>
+        Barcelona 08012<br>
+        <a href="mailto:hola@eltaller.barcelona" style="color:var(--primary);">hola@eltaller.barcelona</a>
+      </p>
+    </div>
+    <nav class="footer-links">
+      <a href="./pages/workshops.html">Workshops</a>
+      <a href="./pages/studio.html">The Studio</a>
+      <a href="./pages/gift.html">Gift a class</a>
+      <a href="./pages/contact.html">Find us</a>
+      <a href="./pages/book.html">Book now</a>
+    </nav>
+    <div>
+      <p class="footer-copy">© 2025 El Taller Barcelona. Handcrafted in Gràcia.</p>
+    </div>
+  </footer>
+
+  <!-- Mobile nav -->
+  <nav class="mobile-nav">
+    <a href="./pages/book.html"
+       style="display:flex;flex-direction:column;align-items:center;
+              background:var(--primary);color:var(--on-primary);
+              border-radius:9999px;padding:.5rem 1.5rem;">
+      <span style="font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;">Book Now</span>
+    </a>
+    <a href="./pages/contact.html"
+       style="display:flex;flex-direction:column;align-items:center;
+              color:var(--secondary);padding:.5rem 1rem;">
+      <span style="font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;">Find us</span>
+    </a>
+  </nav>
+
+  <script src="./assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      ElTaller.renderSessionCards('home-sessions', { limit: 3 });
+      ElTaller.renderUpcomingDates('home-dates', { limit: 5, style: 'table' });
+    });
+  </script>
+</body>
+</html>

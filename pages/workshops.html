@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshops — El Taller Barcelona</title>
+  <meta name="description" content="Browse all pottery workshops at El Taller, Gràcia. Solo sessions, group bookings, date nights, and corporate workshops.">
+  <link rel="stylesheet" href="../assets/css/global.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo">El Taller</a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="./workshops.html" class="active">Workshops</a>
+      <a href="./studio.html">The Studio</a>
+      <a href="./gift.html">Gift a class</a>
+      <a href="./contact.html">Find us</a>
+    </div>
+    <a href="./book.html" class="nav-cta">Book session</a>
+  </nav>
+
+  <main>
+
+    <!-- ── PAGE HEADER ──────────────────────────────────── -->
+    <section style="padding:4rem 1.5rem 3rem;background:var(--surface-container-low);">
+      <div class="container">
+        <p class="section-label">What we offer</p>
+        <h1 class="section-heading" style="font-size:clamp(2.5rem,5vw,3.5rem);">
+          Find your session
+        </h1>
+        <p style="color:var(--secondary);margin-top:1rem;max-width:36rem;line-height:1.7;">
+          All sessions include materials, an experienced instructor, and a genuinely good time
+          in our Gràcia studio. No experience needed for any of them.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── SESSION CARDS (dynamic, filterable) ──────────── -->
+    <section class="py-24">
+      <div class="container">
+        <!-- Filter buttons and grid injected by JS -->
+        <div id="workshops-sessions"></div>
+      </div>
+    </section>
+
+    <!-- ── UPCOMING DATES (dynamic, full list) ──────────── -->
+    <section class="py-24 bg-low">
+      <div class="container">
+        <div style="margin-bottom:2.5rem;">
+          <p class="section-label">Book a spot</p>
+          <h2 class="section-heading">Upcoming sessions</h2>
+          <p style="color:var(--secondary);margin-top:.75rem;font-size:.95rem;">
+            Spots fill fast — especially weekends. Book early to avoid missing out.
+          </p>
+        </div>
+        <div id="workshops-dates"></div>
+      </div>
+    </section>
+
+    <!-- ── FAQ ──────────────────────────────────────────── -->
+    <section class="py-24">
+      <div class="container" style="max-width:48rem;">
+        <div style="margin-bottom:3rem;">
+          <p class="section-label">Before you come</p>
+          <h2 class="section-heading">Common questions</h2>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:0;">
+          <!-- FAQ items — static, no JS needed -->
+          <details style="border-top:1px solid rgba(218,193,184,.3);padding:1.5rem 0;">
+            <summary style="font-family:var(--font-serif);font-size:1.1rem;cursor:pointer;
+                            list-style:none;display:flex;justify-content:space-between;">
+              Do I need any experience?
+              <span style="color:var(--primary);font-family:var(--font-body);font-size:1.25rem;line-height:1;">+</span>
+            </summary>
+            <p style="color:var(--secondary);margin-top:1rem;line-height:1.7;font-size:.95rem;">
+              Absolutely none. Our sessions are designed for complete beginners. Our instructors
+              guide you through everything step by step — you just need to show up.
+            </p>
+          </details>
+          <details style="border-top:1px solid rgba(218,193,184,.3);padding:1.5rem 0;">
+            <summary style="font-family:var(--font-serif);font-size:1.1rem;cursor:pointer;
+                            list-style:none;display:flex;justify-content:space-between;">
+              What should I wear?
+              <span style="color:var(--primary);font-family:var(--font-body);font-size:1.25rem;line-height:1;">+</span>
+            </summary>
+            <p style="color:var(--secondary);margin-top:1rem;line-height:1.7;font-size:.95rem;">
+              Something you don't mind getting clay on. We provide aprons but sleeves and
+              anything light-coloured are at their own risk. Closed-toe shoes recommended.
+            </p>
+          </details>
+          <details style="border-top:1px solid rgba(218,193,184,.3);padding:1.5rem 0;">
+            <summary style="font-family:var(--font-serif);font-size:1.1rem;cursor:pointer;
+                            list-style:none;display:flex;justify-content:space-between;">
+              When do I get my piece?
+              <span style="color:var(--primary);font-family:var(--font-body);font-size:1.25rem;line-height:1;">+</span>
+            </summary>
+            <p style="color:var(--secondary);margin-top:1rem;line-height:1.7;font-size:.95rem;">
+              Pieces are fired and glazed in the two weeks after your session. We'll email you
+              when they're ready to collect from the studio.
+            </p>
+          </details>
+          <details style="border-top:1px solid rgba(218,193,184,.3);border-bottom:1px solid rgba(218,193,184,.3);padding:1.5rem 0;">
+            <summary style="font-family:var(--font-serif);font-size:1.1rem;cursor:pointer;
+                            list-style:none;display:flex;justify-content:space-between;">
+              Can I cancel or reschedule?
+              <span style="color:var(--primary);font-family:var(--font-body);font-size:1.25rem;line-height:1;">+</span>
+            </summary>
+            <p style="color:var(--secondary);margin-top:1rem;line-height:1.7;font-size:.95rem;">
+              Yes — up to 48 hours before your session for a full refund. Within 48 hours,
+              we can reschedule you to a future date but cannot refund. Email us to sort it.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div>
+      <div class="footer-logo">El Taller</div>
+      <p class="footer-address">
+        Carrer de la Perla, 12, Gràcia<br>
+        Barcelona 08012<br>
+        <a href="mailto:hola@eltaller.barcelona" style="color:var(--primary);">hola@eltaller.barcelona</a>
+      </p>
+    </div>
+    <nav class="footer-links">
+      <a href="../index.html">Home</a>
+      <a href="./workshops.html">Workshops</a>
+      <a href="./studio.html">The Studio</a>
+      <a href="./gift.html">Gift a class</a>
+      <a href="./contact.html">Find us</a>
+    </nav>
+    <div>
+      <p class="footer-copy">© 2025 El Taller Barcelona. Handcrafted in Gràcia.</p>
+    </div>
+  </footer>
+
+  <nav class="mobile-nav">
+    <a href="./book.html"
+       style="display:flex;flex-direction:column;align-items:center;
+              background:var(--primary);color:var(--on-primary);
+              border-radius:9999px;padding:.5rem 1.5rem;">
+      <span style="font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;">Book Now</span>
+    </a>
+    <a href="./contact.html"
+       style="display:flex;flex-direction:column;align-items:center;
+              color:var(--secondary);padding:.5rem 1rem;">
+      <span style="font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;">Find us</span>
+    </a>
+  </nav>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      ElTaller.renderSessionCards('workshops-sessions', { limit: 0, filter: true });
+      ElTaller.renderUpcomingDates('workshops-dates', { limit: 0, style: 'table' });
+    });
+  </script>
+</body>
+</html>

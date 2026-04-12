@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Session — El Taller Barcelona</title>
+  <meta name="description" content="Book your pottery session at El Taller, Gràcia, Barcelona.">
+  <link rel="stylesheet" href="../assets/css/global.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo">El Taller</a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="./workshops.html">Workshops</a>
+      <a href="./studio.html">The Studio</a>
+      <a href="./gift.html">Gift a class</a>
+      <a href="./contact.html">Find us</a>
+    </div>
+    <a href="./book.html" class="nav-cta">Book session</a>
+  </nav>
+
+  <main>
+
+    <section style="padding:3rem 1.5rem 6rem;">
+      <div class="container" style="max-width:52rem;">
+
+        <div style="margin-bottom:3rem;">
+          <p class="section-label">Reserve your spot</p>
+          <h1 class="section-heading">Book a session</h1>
+          <p style="color:var(--secondary);margin-top:1rem;line-height:1.7;">
+            Fill in your details below. We'll confirm your booking by email within a few hours.
+            Payment is taken on the day unless you're booking a group session (50% deposit required).
+          </p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;">
+
+          <!-- Booking form -->
+          <form id="booking-form" style="grid-column:1/-1;display:flex;flex-direction:column;">
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+              <div class="form-group">
+                <label class="form-label" for="booking-name">Full name</label>
+                <input class="form-input" id="booking-name" name="name"
+                       type="text" placeholder="Clara Martín" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="booking-email">Email</label>
+                <input class="form-input" id="booking-email" name="email"
+                       type="email" placeholder="hola@you.com" required>
+              </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+              <div class="form-group">
+                <label class="form-label" for="booking-phone">Phone (optional)</label>
+                <input class="form-input" id="booking-phone" name="phone"
+                       type="tel" placeholder="+34 600 000 000">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="booking-people">Number of people</label>
+                <input class="form-input" id="booking-people" name="people"
+                       type="number" min="1" max="20" value="1">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="booking-session">Session type</label>
+              <select class="form-select" id="booking-session" name="session">
+                <option value="">Choose a session…</option>
+                <option value="the-classic">The Classic — €45/person (2 hrs, solo)</option>
+                <option value="group-session">Group Session — €35/person (2.5 hrs, 4–12 people)</option>
+                <option value="date-night">Date Night — €85/pair (2.5 hrs, couples)</option>
+                <option value="corporate">Corporate Workshop — contact us for pricing</option>
+              </select>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+              <div class="form-group">
+                <label class="form-label" for="booking-date">Preferred date</label>
+                <input class="form-input" id="booking-date" name="date" type="date">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="booking-time">Preferred time</label>
+                <select class="form-select" id="booking-time" name="time">
+                  <option value="">Any time</option>
+                  <option value="10:00">10:00</option>
+                  <option value="11:00">11:00</option>
+                  <option value="15:00">15:00</option>
+                  <option value="16:00">16:00</option>
+                  <option value="19:00">19:00</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="booking-notes">Anything we should know?</label>
+              <textarea class="form-textarea" id="booking-notes" name="notes"
+                        placeholder="Allergies, accessibility needs, special occasion, gift booking reference…">
+              </textarea>
+            </div>
+
+            <div style="background:var(--surface-container-low);border-radius:var(--radius-lg);
+                        padding:1.25rem;margin-bottom:1.5rem;">
+              <p style="font-size:.8rem;color:var(--secondary);line-height:1.7;">
+                By submitting this form you're requesting a booking. We'll send a confirmation
+                email once we've checked availability. No payment is taken until confirmed.
+                Cancellations within 48 hours of the session are non-refundable.
+              </p>
+            </div>
+
+            <button type="submit" class="btn-primary" style="align-self:flex-start;">
+              Request booking →
+            </button>
+            <p id="booking-status"
+               style="margin-top:1rem;font-size:.9rem;color:var(--secondary);display:none;"></p>
+          </form>
+
+        </div>
+
+        <!-- Upcoming dates reminder -->
+        <div style="margin-top:4rem;padding-top:4rem;border-top:1px solid rgba(218,193,184,.2);">
+          <p class="section-label">Available dates</p>
+          <h2 class="section-heading" style="margin-bottom:1.5rem;font-size:1.75rem;">
+            Upcoming sessions
+          </h2>
+          <div id="book-dates"></div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div>
+      <div class="footer-logo">El Taller</div>
+      <p class="footer-address">
+        Carrer de la Perla, 12, Gràcia<br>
+        Barcelona 08012<br>
+        <a href="mailto:hola@eltaller.barcelona" style="color:var(--primary);">hola@eltaller.barcelona</a>
+      </p>
+    </div>
+    <nav class="footer-links">
+      <a href="../index.html">Home</a>
+      <a href="./workshops.html">Workshops</a>
+      <a href="./studio.html">The Studio</a>
+      <a href="./gift.html">Gift a class</a>
+      <a href="./contact.html">Find us</a>
+    </nav>
+    <div>
+      <p class="footer-copy">© 2025 El Taller Barcelona. Handcrafted in Gràcia.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      ElTaller.renderUpcomingDates('book-dates', { limit: 0, style: 'cards' });
+
+      document.getElementById('booking-form').addEventListener('submit', e => {
+        e.preventDefault();
+        const status = document.getElementById('booking-status');
+        status.style.display = 'block';
+        status.textContent = 'Request sent! We\'ll confirm your booking by email within a few hours.';
+        e.target.querySelectorAll('input,select,textarea,button').forEach(el => el.disabled = true);
+      });
+    });
+  </script>
+</body>
+</html>

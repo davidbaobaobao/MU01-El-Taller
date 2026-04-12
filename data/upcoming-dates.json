@@ -1,0 +1,112 @@
+[
+  {
+    "id": "date-001",
+    "sessionId": "the-classic",
+    "sessionName": "The Classic",
+    "date": "2026-04-19",
+    "time": "11:00",
+    "spotsTotal": 6,
+    "spotsLeft": 3,
+    "bookUrl": "pages/book.html?session=the-classic&date=2026-04-19&time=1100"
+  },
+  {
+    "id": "date-002",
+    "sessionId": "group-session",
+    "sessionName": "Group Session",
+    "date": "2026-04-23",
+    "time": "16:00",
+    "spotsTotal": 12,
+    "spotsLeft": 7,
+    "bookUrl": "pages/book.html?session=group-session&date=2026-04-23&time=1600"
+  },
+  {
+    "id": "date-003",
+    "sessionId": "date-night",
+    "sessionName": "Date Night",
+    "date": "2026-04-25",
+    "time": "19:00",
+    "spotsTotal": 4,
+    "spotsLeft": 2,
+    "bookUrl": "pages/book.html?session=date-night&date=2026-04-25&time=1900"
+  },
+  {
+    "id": "date-004",
+    "sessionId": "the-classic",
+    "sessionName": "The Classic",
+    "date": "2026-05-02",
+    "time": "10:00",
+    "spotsTotal": 6,
+    "spotsLeft": 0,
+    "bookUrl": ""
+  },
+  {
+    "id": "date-005",
+    "sessionId": "group-session",
+    "sessionName": "Group Session",
+    "date": "2026-05-07",
+    "time": "15:00",
+    "spotsTotal": 12,
+    "spotsLeft": 12,
+    "bookUrl": "pages/book.html?session=group-session&date=2026-05-07&time=1500"
+  },
+  {
+    "id": "date-006",
+    "sessionId": "date-night",
+    "sessionName": "Date Night",
+    "date": "2026-05-14",
+    "time": "19:00",
+    "spotsTotal": 4,
+    "spotsLeft": 4,
+    "bookUrl": "pages/book.html?session=date-night&date=2026-05-14&time=1900"
+  },
+  {
+    "id": "date-007",
+    "sessionId": "the-classic",
+    "sessionName": "The Classic",
+    "date": "2026-05-17",
+    "time": "11:00",
+    "spotsTotal": 6,
+    "spotsLeft": 5,
+    "bookUrl": "pages/book.html?session=the-classic&date=2026-05-17&time=1100"
+  },
+  {
+    "id": "date-008",
+    "sessionId": "corporate",
+    "sessionName": "Corporate Workshop",
+    "date": "2026-05-21",
+    "time": "10:00",
+    "spotsTotal": 20,
+    "spotsLeft": 8,
+    "bookUrl": "pages/contact.html?subject=corporate"
+  },
+  {
+    "id": "date-009",
+    "sessionId": "the-classic",
+    "sessionName": "The Classic",
+    "date": "2026-06-06",
+    "time": "11:00",
+    "spotsTotal": 6,
+    "spotsLeft": 6,
+    "bookUrl": "pages/book.html?session=the-classic&date=2026-06-06&time=1100"
+  },
+  {
+    "id": "date-010",
+    "sessionId": "group-session",
+    "sessionName": "Group Session",
+    "date": "2026-06-11",
+    "time": "16:00",
+    "spotsTotal": 12,
+    "spotsLeft": 9,
+    "bookUrl": "pages/book.html?session=group-session&date=2026-06-11&time=1600"
+  },
+  {
+    "id": "date-011",
+    "sessionId": "date-night",
+    "sessionName": "Date Night",
+    "date": "2026-06-18",
+    "time": "19:00",
+    "spotsTotal": 4,
+    "spotsLeft": 3,
+    "bookUrl": "pages/book.html?session=date-night&date=2026-06-18&time=1900"
+  }
+]
