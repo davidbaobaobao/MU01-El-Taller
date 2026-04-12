@@ -5,6 +5,8 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import SessionGrid from '@/components/SessionGrid'
 import DatesTable from '@/components/DatesTable'
+import ScrollVideoSection from '@/components/ScrollVideoSection'
+import ScrollReveal from '@/components/ScrollReveal'
 import { supabase } from '@/lib/supabase'
 import type { CatalogItem, SessionDate } from '@/lib/types'
 
@@ -49,131 +51,141 @@ export default async function HomePage() {
       <main style={{ paddingBottom: '6rem' }}>
 
         {/* ── HERO ── */}
-        <section style={{ padding: '3rem 1.5rem 5rem', maxWidth: '80rem', margin: '0 auto', overflow: 'hidden' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3rem', alignItems: 'center' }}>
+        <section
+          style={{
+            position: 'relative',
+            height: '100vh',
+            minHeight: '600px',
+            overflow: 'hidden',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          {/* Background video */}
+          <video
+            src="/media/hero.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{
+              position: 'absolute',
+              inset: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              zIndex: 0,
+            }}
+          />
 
-            <div style={{ zIndex: 1 }}>
-              <p className="section-label">Gràcia, Barcelona</p>
-              <h1
-                style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: 'clamp(3rem, 7vw, 5rem)',
-                  lineHeight: 1.1,
-                  letterSpacing: '-0.03em',
-                  color: 'var(--on-surface)',
-                  marginBottom: '1.5rem',
-                }}
-              >
-                Haz algo<br />
-                con tus <em style={{ color: 'var(--primary)' }}>manos.</em>
-              </h1>
-              <p
-                style={{
-                  fontSize: '1.1rem',
-                  color: 'var(--secondary)',
-                  maxWidth: '28rem',
-                  lineHeight: 1.7,
-                  marginBottom: '2rem',
-                }}
-              >
-                Pasa tus tardes en nuestro estudio lleno de luz en Gràcia.
-                Sin experiencia previa — solo ganas de mancharte un poco.
-              </p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
-                <Link href="/reservar" className="btn-primary">Reservar una sesión →</Link>
-                <Link href="/regalo" className="btn-ghost">Regalar una clase</Link>
-              </div>
+          {/* Dark gradient overlay */}
+          <div
+            aria-hidden="true"
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background:
+                'linear-gradient(to top, rgba(30,27,21,0.75) 0%, rgba(30,27,21,0.35) 50%, rgba(30,27,21,0.15) 100%)',
+              zIndex: 1,
+            }}
+          />
+
+          {/* Content */}
+          <div
+            style={{
+              position: 'relative',
+              zIndex: 2,
+              textAlign: 'center',
+              padding: '0 1.5rem',
+              maxWidth: '52rem',
+            }}
+          >
+            <p
+              className="section-label"
+              style={{ color: 'rgba(255,220,195,0.85)', marginBottom: '1.5rem' }}
+            >
+              Gràcia, Barcelona
+            </p>
+            <h1
+              style={{
+                fontFamily: 'var(--font-serif)',
+                fontSize: 'clamp(3rem, 8vw, 5.5rem)',
+                lineHeight: 1.05,
+                letterSpacing: '-0.03em',
+                color: 'var(--surface)',
+                marginBottom: '1.5rem',
+              }}
+            >
+              Haz algo<br />
+              con tus <em style={{ color: 'rgba(220,160,120,1)' }}>manos.</em>
+            </h1>
+            <p
+              style={{
+                fontSize: 'clamp(1rem, 2vw, 1.15rem)',
+                color: 'rgba(255,248,242,0.75)',
+                maxWidth: '30rem',
+                margin: '0 auto 2.25rem',
+                lineHeight: 1.7,
+              }}
+            >
+              Pasa tus tardes en nuestro estudio lleno de luz en Gràcia.
+              Sin experiencia previa — solo ganas de mancharte un poco.
+            </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
+              <Link href="/reservar" className="btn-primary">Reservar una sesión →</Link>
+              <Link href="/regalo" className="btn-ghost" style={{ color: 'var(--surface)', borderColor: 'rgba(255,248,242,0.4)' }}>
+                Regalar una clase
+              </Link>
             </div>
-
-            {/* Asymmetric image collage */}
-            <div style={{ position: 'relative', height: '480px' }}>
-              <div
-                style={{
-                  position: 'absolute',
-                  top: 0,
-                  right: 0,
-                  width: '72%',
-                  height: '75%',
-                  borderRadius: 'var(--radius-xl)',
-                  overflow: 'hidden',
-                  transform: 'rotate(2deg)',
-                }}
-              >
-                <Image
-                  src="/media/hero-wheel.jpeg"
-                  alt="Manos moldeando arcilla en un torno de alfarería"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  sizes="50vw"
-                  priority
-                />
-              </div>
-              <div
-                style={{
-                  position: 'absolute',
-                  bottom: '1rem',
-                  left: 0,
-                  width: '60%',
-                  height: '50%',
-                  borderRadius: 'var(--radius-xl)',
-                  overflow: 'hidden',
-                  transform: 'rotate(-3deg)',
-                  border: '8px solid var(--surface)',
-                  zIndex: 2,
-                }}
-              >
-                <Image
-                  src="/media/hero-mugs.jpeg"
-                  alt="Tazas de cerámica hechas a mano en una estantería de madera"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  sizes="40vw"
-                  priority
-                />
-              </div>
-            </div>
-
           </div>
         </section>
+
+        {/* ── SCROLL VIDEO ── */}
+        <ScrollVideoSection />
 
         {/* ── SESSIONS (dynamic) ── */}
         {sessions.length > 0 && (
           <section className="bg-low py-24">
             <div className="container">
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'flex-end',
-                  flexWrap: 'wrap',
-                  gap: '1rem',
-                  marginBottom: '3rem',
-                }}
-              >
-                <div>
-                  <p className="section-label">Talleres</p>
-                  <h2 className="section-heading">Elige tu tarde</h2>
-                </div>
-                <p
+              <ScrollReveal>
+                <div
                   style={{
-                    fontFamily: 'var(--font-serif)',
-                    fontStyle: 'italic',
-                    color: 'var(--secondary)',
-                    maxWidth: '18rem',
-                    textAlign: 'right',
-                    opacity: 0.7,
-                    fontSize: '0.95rem',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'flex-end',
+                    flexWrap: 'wrap',
+                    gap: '1rem',
+                    marginBottom: '3rem',
                   }}
                 >
-                  &ldquo;Cada pieza cuenta la historia de las manos que la sostuvieron.&rdquo;
-                </p>
-              </div>
+                  <div>
+                    <p className="section-label">Talleres</p>
+                    <h2 className="section-heading">Elige tu tarde</h2>
+                  </div>
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-serif)',
+                      fontStyle: 'italic',
+                      color: 'var(--secondary)',
+                      maxWidth: '18rem',
+                      textAlign: 'right',
+                      opacity: 0.7,
+                      fontSize: '0.95rem',
+                    }}
+                  >
+                    &ldquo;Cada pieza cuenta la historia de las manos que la sostuvieron.&rdquo;
+                  </p>
+                </div>
+              </ScrollReveal>
 
-              <SessionGrid sessions={sessions} />
+              <ScrollReveal delay={120}>
+                <SessionGrid sessions={sessions} />
+              </ScrollReveal>
 
-              <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+              <ScrollReveal delay={200} style={{ textAlign: 'center', marginTop: '3rem' }}>
                 <Link href="/talleres" className="btn-ghost">Ver todos los talleres</Link>
-              </div>
+              </ScrollReveal>
             </div>
           </section>
         )}
@@ -182,14 +194,18 @@ export default async function HomePage() {
         {dates.length > 0 && (
           <section className="py-24">
             <div className="container">
-              <div style={{ marginBottom: '2.5rem' }}>
-                <p className="section-label">Disponibilidad</p>
-                <h2 className="section-heading">Próximas sesiones</h2>
-              </div>
-              <DatesTable dates={dates} />
-              <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+              <ScrollReveal>
+                <div style={{ marginBottom: '2.5rem' }}>
+                  <p className="section-label">Disponibilidad</p>
+                  <h2 className="section-heading">Próximas sesiones</h2>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={100}>
+                <DatesTable dates={dates} />
+              </ScrollReveal>
+              <ScrollReveal delay={180} style={{ textAlign: 'center', marginTop: '2rem' }}>
                 <Link href="/talleres" className="btn-ghost">Ver todas las fechas</Link>
-              </div>
+              </ScrollReveal>
             </div>
           </section>
         )}
@@ -197,10 +213,10 @@ export default async function HomePage() {
         {/* ── STUDIO MOMENTS ── */}
         <section className="py-24 bg-low">
           <div className="container">
-            <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <ScrollReveal style={{ textAlign: 'center', marginBottom: '3rem' }}>
               <p className="section-label">Ambiente</p>
               <h2 className="section-heading">Momentos del estudio</h2>
-            </div>
+            </ScrollReveal>
             <div
               style={{
                 display: 'grid',
@@ -211,24 +227,25 @@ export default async function HomePage() {
               }}
             >
               {[
-                { src: '/media/studio-1.jpeg', alt: 'Texturas de arcilla en primer plano', rotate: '-2deg', ratio: '1 / 1', bg: 'var(--surface-container)' },
-                { src: '/media/studio-2.jpeg', alt: 'Cuencos terminados en una estantería', rotate: '1deg', ratio: '4 / 5', bg: 'var(--surface-container-high)' },
-                { src: '/media/studio-3.jpeg', alt: 'Interior del estudio con luz solar', rotate: '2deg', ratio: '4 / 3', bg: 'var(--surface-container)' },
-                { src: '/media/studio-4.jpeg', alt: 'Herramientas del alfarero ordenadas', rotate: '-1deg', ratio: '1 / 1', bg: 'var(--surface-container-high)' },
-              ].map(({ src, alt, rotate, ratio, bg }) => (
-                <div
-                  key={src}
-                  style={{
-                    aspectRatio: ratio,
-                    borderRadius: 'var(--radius-xl)',
-                    overflow: 'hidden',
-                    transform: `rotate(${rotate})`,
-                    background: bg,
-                    position: 'relative',
-                  }}
-                >
-                  <Image src={src} alt={alt} fill style={{ objectFit: 'cover' }} sizes="30vw" />
-                </div>
+                { src: '/media/studio-1.jpeg', alt: 'Texturas de arcilla en primer plano', rotate: '-2deg', ratio: '1 / 1', bg: 'var(--surface-container)', delay: 0 },
+                { src: '/media/studio-2.jpeg', alt: 'Cuencos terminados en una estantería', rotate: '1deg', ratio: '4 / 5', bg: 'var(--surface-container-high)', delay: 80 },
+                { src: '/media/studio-3.jpeg', alt: 'Interior del estudio con luz solar', rotate: '2deg', ratio: '4 / 3', bg: 'var(--surface-container)', delay: 160 },
+                { src: '/media/studio-4.jpeg', alt: 'Herramientas del alfarero ordenadas', rotate: '-1deg', ratio: '1 / 1', bg: 'var(--surface-container-high)', delay: 240 },
+              ].map(({ src, alt, rotate, ratio, bg, delay }) => (
+                <ScrollReveal key={src} delay={delay}>
+                  <div
+                    style={{
+                      aspectRatio: ratio,
+                      borderRadius: 'var(--radius-xl)',
+                      overflow: 'hidden',
+                      transform: `rotate(${rotate})`,
+                      background: bg,
+                      position: 'relative',
+                    }}
+                  >
+                    <Image src={src} alt={alt} fill style={{ objectFit: 'cover' }} sizes="30vw" />
+                  </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -237,7 +254,7 @@ export default async function HomePage() {
         {/* ── HOW IT WORKS ── */}
         <section className="py-24">
           <div className="container">
-            <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <ScrollReveal style={{ textAlign: 'center', marginBottom: '4rem' }}>
               <h2 className="section-heading">El viaje de una pieza</h2>
               <div
                 style={{
@@ -248,39 +265,25 @@ export default async function HomePage() {
                   margin: '1rem auto 0',
                 }}
               />
-            </div>
+            </ScrollReveal>
             <div className="grid-4">
               {[
-                {
-                  n: '1',
-                  title: 'Reservar',
-                  desc: 'Elige tu sesión y horario online. Pago al confirmar.',
-                },
-                {
-                  n: '2',
-                  title: 'Aparecer',
-                  desc: 'Encuéntranos en Carrer de la Perla, Gràcia. Delantal y materiales esperando.',
-                },
-                {
-                  n: '3',
-                  title: 'Crear',
-                  desc: 'Moldea, da forma y refina tu creación con nuestra instructora.',
-                },
-                {
-                  n: '4',
-                  title: 'Recoger',
-                  desc: 'Lo cocemos y vidriamos. Tu pieza estará lista para recoger en dos semanas.',
-                },
-              ].map(({ n, title, desc }) => (
-                <div key={n} className="step" style={{ textAlign: 'center' }}>
-                  <div className="step-circle">{n}</div>
-                  <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', marginBottom: '0.5rem' }}>
-                    {title}
-                  </h4>
-                  <p style={{ fontSize: '0.9rem', color: 'var(--secondary)', lineHeight: 1.6, padding: '0 1rem' }}>
-                    {desc}
-                  </p>
-                </div>
+                { n: '1', title: 'Reservar', desc: 'Elige tu sesión y horario online. Pago al confirmar.', delay: 0 },
+                { n: '2', title: 'Aparecer', desc: 'Encuéntranos en Carrer de la Perla, Gràcia. Delantal y materiales esperando.', delay: 100 },
+                { n: '3', title: 'Crear', desc: 'Moldea, da forma y refina tu creación con nuestra instructora.', delay: 200 },
+                { n: '4', title: 'Recoger', desc: 'Lo cocemos y vidriamos. Tu pieza estará lista para recoger en dos semanas.', delay: 300 },
+              ].map(({ n, title, desc, delay }) => (
+                <ScrollReveal key={n} delay={delay}>
+                  <div className="step" style={{ textAlign: 'center' }}>
+                    <div className="step-circle">{n}</div>
+                    <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', marginBottom: '0.5rem' }}>
+                      {title}
+                    </h4>
+                    <p style={{ fontSize: '0.9rem', color: 'var(--secondary)', lineHeight: 1.6, padding: '0 1rem' }}>
+                      {desc}
+                    </p>
+                  </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -376,16 +379,18 @@ export default async function HomePage() {
         {/* ── DARK CTA ── */}
         <section style={{ padding: '4rem 1.5rem' }}>
           <div className="container">
-            <div className="cta-dark">
-              <h2>¿Listo para mancharte<br />las manos?</h2>
-              <Link
-                href="/reservar"
-                className="btn-primary"
-                style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }}
-              >
-                Reservar tu sesión →
-              </Link>
-            </div>
+            <ScrollReveal>
+              <div className="cta-dark">
+                <h2>¿Listo para mancharte<br />las manos?</h2>
+                <Link
+                  href="/reservar"
+                  className="btn-primary"
+                  style={{ fontSize: '1.1rem', padding: '1.1rem 2.5rem' }}
+                >
+                  Reservar tu sesión →
+                </Link>
+              </div>
+            </ScrollReveal>
           </div>
         </section>
 
