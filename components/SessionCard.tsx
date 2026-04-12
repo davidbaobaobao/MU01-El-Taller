@@ -6,6 +6,13 @@ interface Props {
   item: CatalogItem
 }
 
+const CATEGORY_FALLBACK: Record<string, string> = {
+  Individual:  '/media/session-classic.jpeg',
+  Grupo:       '/media/session-group.jpeg',
+  Parejas:     '/media/session-date.jpeg',
+  Corporativo: '/media/session-corporate.jpeg',
+}
+
 export default function SessionCard({ item }: Props) {
   const isFeatured = item.featured ?? false
   const priceDisplay =
@@ -19,24 +26,21 @@ export default function SessionCard({ item }: Props) {
   return (
     <div className={`session-card${isFeatured ? ' featured' : ''}`}>
       <div className="session-card-image-wrap">
-        {item.image_url ? (
-          <Image
-            src={item.image_url}
-            alt={item.name}
-            fill
-            className="session-card-image"
-            style={{ objectFit: 'cover' }}
-            sizes="(max-width: 768px) 100vw, 33vw"
-          />
-        ) : (
-          <div
-            style={{
-              width: '100%',
-              height: '100%',
-              background: 'var(--surface-container)',
-            }}
-          />
-        )}
+        {(() => {
+          const src = item.image_url || CATEGORY_FALLBACK[item.category] || null
+          return src ? (
+            <Image
+              src={src}
+              alt={item.name}
+              fill
+              className="session-card-image"
+              style={{ objectFit: 'cover' }}
+              sizes="(max-width: 768px) 100vw, 33vw"
+            />
+          ) : (
+            <div style={{ width: '100%', height: '100%', background: 'var(--surface-container)' }} />
+          )
+        })()}
         {isFeatured && (
           <span className="session-card-badge">Más popular</span>
         )}

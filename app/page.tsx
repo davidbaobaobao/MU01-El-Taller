@@ -7,6 +7,7 @@ import SessionGrid from '@/components/SessionGrid'
 import DatesTable from '@/components/DatesTable'
 import ScrollVideoSection from '@/components/ScrollVideoSection'
 import ScrollReveal from '@/components/ScrollReveal'
+import HeroVideo from '@/components/HeroVideo'
 import { supabase } from '@/lib/supabase'
 import type { CatalogItem, SessionDate } from '@/lib/types'
 
@@ -62,22 +63,8 @@ export default async function HomePage() {
             justifyContent: 'center',
           }}
         >
-          {/* Background video */}
-          <video
-            src="/media/hero.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            style={{
-              position: 'absolute',
-              inset: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              zIndex: 0,
-            }}
-          />
+          {/* Background video — seamless JS loop */}
+          <HeroVideo />
 
           {/* Dark gradient overlay */}
           <div
