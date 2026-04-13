@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 
 /**
  * Scroll-driven video section.
@@ -74,9 +75,18 @@ export default function ScrollVideoSection() {
 
     const onScroll = () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(tick) }
 
-    tick()
+    // Apply the correct frame as soon as the video is seekable,
+    // in case the user has already scrolled before it finished loading.
+    const onLoaded = () => tick()
+    video.addEventListener('loadedmetadata', onLoaded)
+    if (video.readyState >= 1) tick()   // already loaded
+
     window.addEventListener('scroll', onScroll, { passive: true })
-    return () => { window.removeEventListener('scroll', onScroll); cancelAnimationFrame(raf) }
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      video.removeEventListener('loadedmetadata', onLoaded)
+      cancelAnimationFrame(raf)
+    }
   }, [isMobile])
 
   // ── Mobile: IntersectionObserver text reveal ──────────────────────
@@ -116,7 +126,7 @@ export default function ScrollVideoSection() {
       style={{ height: isMobile ? '100vh' : '550vh', position: 'relative' }}
     >
       {/* Sticky viewport-height panel */}
-      <div style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden', background: '#fff8f2' }}>
+      <div style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden', background: '#fff8f2', isolation: 'isolate' }}>
 
         {/* ── Desktop video — centred, ~40 % width ── */}
         {!isMobile && (
@@ -146,12 +156,13 @@ export default function ScrollVideoSection() {
 
         {/* ── Mobile: static image ── */}
         {isMobile && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+          <Image
             src="/media/studio-hero.jpeg"
             alt=""
             aria-hidden="true"
-            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+            fill
+            style={{ objectFit: 'cover' }}
+            sizes="100vw"
           />
         )}
 
