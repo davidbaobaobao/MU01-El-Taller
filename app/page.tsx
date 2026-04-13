@@ -88,12 +88,6 @@ export default async function HomePage() {
               maxWidth: '52rem',
             }}
           >
-            <p
-              className="section-label"
-              style={{ color: 'rgba(255,220,195,0.85)', marginBottom: '1.5rem' }}
-            >
-              Gràcia, Barcelona
-            </p>
             <h1
               style={{
                 fontFamily: 'var(--font-serif)',
