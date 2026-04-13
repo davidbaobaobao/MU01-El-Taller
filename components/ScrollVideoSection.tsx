@@ -126,7 +126,7 @@ export default function ScrollVideoSection() {
               top: '50%',
               left: '50%',
               transform: 'translate(-50%, -50%)',
-              width: 'min(42vw, 680px)',
+              width: 'min(50vw, 816px)',
               aspectRatio: '16 / 10',
               borderRadius: '1.25rem',
               overflow: 'hidden',
