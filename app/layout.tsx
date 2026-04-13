@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Noto_Serif, Be_Vietnam_Pro } from 'next/font/google'
 import './globals.css'
 
@@ -16,6 +16,11 @@ const beVietnamPro = Be_Vietnam_Pro({
   variable: '--font-body',
   display: 'swap',
 })
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
 
 export const metadata: Metadata = {
   title: {
