@@ -116,7 +116,7 @@ export default function ScrollVideoSection() {
       style={{ height: isMobile ? '100vh' : '550vh', position: 'relative' }}
     >
       {/* Sticky viewport-height panel */}
-      <div style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden', background: 'rgba(22,19,15,0.97)' }}>
+      <div style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden', background: '#fff8f2' }}>
 
         {/* ── Desktop video — centred, ~40 % width ── */}
         {!isMobile && (
@@ -130,7 +130,7 @@ export default function ScrollVideoSection() {
               aspectRatio: '16 / 10',
               borderRadius: '1.25rem',
               overflow: 'hidden',
-              boxShadow: '0 32px 80px rgba(0,0,0,0.6)',
+              boxShadow: '0 24px 64px rgba(100,70,50,0.12)',
             }}
           >
             <video
@@ -161,7 +161,7 @@ export default function ScrollVideoSection() {
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(to top, rgba(22,19,15,0.92) 0%, rgba(22,19,15,0.2) 40%, transparent 65%)',
+            background: 'linear-gradient(to top, rgba(255,248,242,0.96) 0%, rgba(255,248,242,0.5) 35%, transparent 60%)',
             pointerEvents: 'none',
           }}
         />
@@ -186,8 +186,8 @@ export default function ScrollVideoSection() {
               fontWeight: 700,
               letterSpacing: '0.2em',
               textTransform: 'uppercase',
-              color: 'rgba(255,220,195,0.9)',
-              background: 'rgba(255,248,242,0.1)',
+              color: '#54433c',
+              background: 'rgba(30,27,21,0.07)',
               padding: '0.25rem 0.75rem',
               borderRadius: '9999px',
               marginBottom: '1.25rem',
@@ -206,7 +206,7 @@ export default function ScrollVideoSection() {
               fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
               lineHeight: 1.1,
               letterSpacing: '-0.03em',
-              color: 'var(--surface)',
+              color: '#1e1b15',
               marginBottom: '1.25rem',
               opacity: 0,
               willChange: 'opacity, transform',
@@ -222,7 +222,7 @@ export default function ScrollVideoSection() {
               fontFamily: 'var(--font-serif)',
               fontStyle: 'italic',
               fontSize: 'clamp(1rem, 2vw, 1.25rem)',
-              color: 'rgba(255,248,242,0.6)',
+              color: '#54433c',
               maxWidth: '32rem',
               margin: '0 auto',
               lineHeight: 1.7,
