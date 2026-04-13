@@ -204,37 +204,87 @@ export default async function HomePage() {
               <p className="section-label">Ambiente</p>
               <h2 className="section-heading">Momentos del estudio</h2>
             </ScrollReveal>
+
+            {/* Row 1 — 2 images, offset */}
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
-                gap: '1rem',
-                maxWidth: '60rem',
-                margin: '0 auto',
+                gridTemplateColumns: '5fr 1fr 6fr',
+                gap: '1.25rem',
+                maxWidth: '68rem',
+                margin: '0 auto 1.25rem',
+                alignItems: 'start',
               }}
             >
-              {[
-                { src: '/media/studio-1.jpeg', alt: 'Texturas de arcilla en primer plano', rotate: '-2deg', ratio: '1 / 1', bg: 'var(--surface-container)', delay: 0 },
-                { src: '/media/studio-2.jpeg', alt: 'Cuencos terminados en una estantería', rotate: '1deg', ratio: '4 / 5', bg: 'var(--surface-container-high)', delay: 80 },
-                { src: '/media/studio-3.jpeg', alt: 'Interior del estudio con luz solar', rotate: '2deg', ratio: '4 / 3', bg: 'var(--surface-container)', delay: 160 },
-                { src: '/media/studio-4.jpeg', alt: 'Herramientas del alfarero ordenadas', rotate: '-1deg', ratio: '1 / 1', bg: 'var(--surface-container-high)', delay: 240 },
-              ].map(({ src, alt, rotate, ratio, bg, delay }) => (
-                <ScrollReveal key={src} delay={delay}>
-                  <div
-                    style={{
-                      aspectRatio: ratio,
-                      borderRadius: 'var(--radius-xl)',
-                      overflow: 'hidden',
-                      transform: `rotate(${rotate})`,
-                      background: bg,
-                      position: 'relative',
-                    }}
-                  >
-                    <Image src={src} alt={alt} fill style={{ objectFit: 'cover' }} sizes="30vw" />
-                  </div>
-                </ScrollReveal>
-              ))}
+              <ScrollReveal delay={0}>
+                <div style={{ position: 'relative', aspectRatio: '4/5', borderRadius: '999px 999px 40% 40%', overflow: 'hidden', transform: 'rotate(-1.5deg)', marginTop: '3rem' }}>
+                  <Image src="/media/gallery1.jpeg" alt="Taller de cerámica" fill style={{ objectFit: 'cover' }} sizes="30vw" />
+                </div>
+              </ScrollReveal>
+              <div /> {/* spacer */}
+              <ScrollReveal delay={80}>
+                <div style={{ position: 'relative', aspectRatio: '3/4', borderRadius: '40% 40% 999px 999px', overflow: 'hidden', transform: 'rotate(1deg)' }}>
+                  <Image src="/media/gallery2.jpeg" alt="Piezas de cerámica" fill style={{ objectFit: 'cover' }} sizes="35vw" />
+                </div>
+              </ScrollReveal>
             </div>
+
+            {/* Row 2 — 3 images */}
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1.2fr 1fr',
+                gap: '1.25rem',
+                maxWidth: '68rem',
+                margin: '0 auto 1.25rem',
+                alignItems: 'end',
+              }}
+            >
+              <ScrollReveal delay={60}>
+                <div style={{ position: 'relative', aspectRatio: '1/1', borderRadius: '50% 30% 50% 30%', overflow: 'hidden', transform: 'rotate(2deg)', marginTop: '1rem' }}>
+                  <Image src="/media/gallery3.jpeg" alt="Arcilla y textura" fill style={{ objectFit: 'cover' }} sizes="22vw" />
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={140}>
+                <div style={{ position: 'relative', aspectRatio: '4/5', borderRadius: '30% 50% 30% 50%', overflow: 'hidden', transform: 'rotate(-1deg)' }}>
+                  <Image src="/media/studio-1.jpeg" alt="Estudio de cerámica" fill style={{ objectFit: 'cover' }} sizes="28vw" />
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={220}>
+                <div style={{ position: 'relative', aspectRatio: '1/1', borderRadius: '50%', overflow: 'hidden', transform: 'rotate(1.5deg)', marginTop: '2rem' }}>
+                  <Image src="/media/gallery4.jpeg" alt="Cuencos artesanales" fill style={{ objectFit: 'cover' }} sizes="22vw" />
+                </div>
+              </ScrollReveal>
+            </div>
+
+            {/* Row 3 — 3 images */}
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: '1.2fr 1fr 1.2fr',
+                gap: '1.25rem',
+                maxWidth: '68rem',
+                margin: '0 auto',
+                alignItems: 'start',
+              }}
+            >
+              <ScrollReveal delay={80}>
+                <div style={{ position: 'relative', aspectRatio: '4/3', borderRadius: '40% 30% 50% 40%', overflow: 'hidden', transform: 'rotate(-0.5deg)' }}>
+                  <Image src="/media/studio-2.jpeg" alt="Interior del estudio" fill style={{ objectFit: 'cover' }} sizes="28vw" />
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={160}>
+                <div style={{ position: 'relative', aspectRatio: '3/4', borderRadius: '999px', overflow: 'hidden', transform: 'rotate(1deg)', marginTop: '-2rem' }}>
+                  <Image src="/media/gallery5.jpeg" alt="Proceso creativo" fill style={{ objectFit: 'cover' }} sizes="22vw" />
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={240}>
+                <div style={{ position: 'relative', aspectRatio: '4/3', borderRadius: '30% 50% 30% 50%', overflow: 'hidden', transform: 'rotate(-1.5deg)' }}>
+                  <Image src="/media/studio-3.jpeg" alt="Herramientas del alfarero" fill style={{ objectFit: 'cover' }} sizes="28vw" />
+                </div>
+              </ScrollReveal>
+            </div>
+
           </div>
         </section>
 
