@@ -143,7 +143,7 @@ export default function ScrollVideoSection() {
         {!isMobile && (
           <video
             ref={videoRef}
-            src="/media/slider-animation.mp4"
+            src="/media/slider-2.mp4"
             muted
             playsInline
             preload="auto"

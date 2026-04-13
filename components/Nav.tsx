@@ -44,53 +44,6 @@ export default function Nav() {
         </Link>
       </nav>
 
-      {/* Mobile bottom nav */}
-      <nav className="mobile-nav">
-        <Link
-          href="/reservar"
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            background: 'var(--primary)',
-            color: 'var(--on-primary)',
-            borderRadius: '9999px',
-            padding: '0.5rem 1.5rem',
-          }}
-        >
-          <span
-            style={{
-              fontSize: '0.65rem',
-              fontWeight: 700,
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-            }}
-          >
-            Reservar
-          </span>
-        </Link>
-        <Link
-          href="/contacto"
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            color: 'var(--secondary)',
-            padding: '0.5rem 1rem',
-          }}
-        >
-          <span
-            style={{
-              fontSize: '0.65rem',
-              fontWeight: 700,
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-            }}
-          >
-            Encuéntranos
-          </span>
-        </Link>
-      </nav>
     </>
   )
 }
